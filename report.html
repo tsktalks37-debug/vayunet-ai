@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+```
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>VayuNet AI | Report Pollution</title>
+
+<link rel="stylesheet"
+      href="style.css">
+```
+
+</head>
+
+<body>
+
+```
+<!-- Navigation -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <span>◉</span> VayuNet <b>AI</b>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="report.html"
+           class="active">
+            Report Pollution
+        </a>
+
+    </div>
+
+    <div class="system-status">
+
+        <span class="status-dot"></span>
+
+        AI SYSTEM ONLINE
+
+    </div>
+
+</nav>
+
+
+<!-- Main -->
+
+<main class="report-page">
+
+
+    <!-- Header -->
+
+    <section class="report-header">
+
+        <div class="badge">
+            CITIZEN CLIMATE INTELLIGENCE
+        </div>
+
+        <h1>
+            See pollution?
+            <span>Report it.</span>
+        </h1>
+
+        <p>
+            Your local observation can help VayuNet AI
+            detect pollution hotspots that conventional
+            monitoring systems may miss.
+        </p>
+
+    </section>
+
+
+    <!-- Report Form -->
+
+    <section class="report-container">
+
+
+        <div class="report-form panel">
+
+            <div class="form-title">
+
+                <span class="panel-label">
+                    NEW POLLUTION REPORT
+                </span>
+
+                <h2>
+                    Submit an observation
+                </h2>
+
+            </div>
+
+
+            <!-- Location -->
+
+            <div class="form-group">
+
+                <label>
+                    📍 Location
+                </label>
+
+                <div class="location-input">
+
+                    <input
+                        type="text"
+                        id="location"
+                        placeholder="Enter city, area or landmark">
+
+                    <button
+                        type="button"
+                        onclick="getLocation()">
+
+                        Use my location
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Pollution Type -->
+
+            <div class="form-group">
+
+                <label>
+                    What are you observing?
+                </label>
+
+                <select id="pollutionType">
+
+                    <option value="">
+                        Select pollution type
+                    </option>
+
+                    <option>
+                        Heavy smoke
+                    </option>
+
+                    <option>
+                        Industrial emissions
+                    </option>
+
+                    <option>
+                        Agricultural burning
+                    </option>
+
+                    <option>
+                        Vehicle pollution
+                    </option>
+
+                    <option>
+                        Dust / construction
+                    </option>
+
+                    <option>
+                        Unknown
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Description -->
+
+            <div class="form-group">
+
+                <label>
+                    Describe what you see
+                </label>
+
+                <textarea
+                    id="description"
+                    rows="5"
+                    placeholder="Example: Heavy black smoke is coming from an industrial area..."></textarea>
+
+            </div>
+
+
+            <!-- Photo -->
+
+            <div class="form-group">
+
+                <label>
+                    📷 Upload a photo
+                </label>
+
+                <div
+                    class="upload-area"
+                    id="uploadArea">
+
+                    <input
+                        type="file"
+                        id="photo"
+                        accept="image/*"
+                        hidden>
+
+                    <div class="upload-icon">
+                        📷
+                    </div>
+
+                    <strong>
+                        Upload pollution evidence
+                    </strong>
+
+                    <p>
+                        JPG, PNG or WEBP
+                    </p>
+
+                    <button
+                        type="button"
+                        onclick="document.getElementById('photo').click()">
+
+                        Choose Photo
+
+                    </button>
+
+                </div>
+
+                <div
+                    id="fileName"
+                    class="file-name">
+                </div>
+
+            </div>
+
+
+            <!-- Severity -->
+
+            <div class="form-group">
+
+                <label>
+                    How severe does it appear?
+                </label>
+
+                <div class="severity-options">
+
+                    <label class="severity-option">
+
+                        <input
+                            type="radio"
+                            name="severity"
+                            value="low">
+
+                        <span>
+                            🟢 Low
+                        </span>
+
+                    </label>
+
+
+                    <label class="severity-option">
+
+                        <input
+                            type="radio"
+                            name="severity"
+                            value="medium">
+
+                        <span>
+                            🟡 Moderate
+                        </span>
+
+                    </label>
+
+
+                    <label class="severity-option">
+
+                        <input
+                            type="radio"
+                            name="severity"
+                            value="high">
+
+                        <span>
+                            🟠 High
+                        </span>
+
+                    </label>
+
+
+                    <label class="severity-option">
+
+                        <input
+                            type="radio"
+                            name="severity"
+                            value="critical">
+
+                        <span>
+                            🔴 Critical
+                        </span>
+
+                    </label>
+
+                </div>
+
+            </div>
+
+
+            <!-- Language -->
+
+            <div class="form-group">
+
+                <label>
+                    Report language
+                </label>
+
+                <select id="language">
+
+                    <option>
+                        English
+                    </option>
+
+                    <option>
+                        Hindi
+                    </option>
+
+                    <option>
+                        Hinglish
+                    </option>
+
+                    <option>
+                        Bengali
+                    </option>
+
+                    <option>
+                        Tamil
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <!-- Submit -->
+
+            <button
+                class="submit-report"
+                onclick="submitReport()">
+
+                Analyze Report with AI →
+
+            </button>
+
+
+            <p class="privacy-note">
+
+                Your report will be analyzed by AI and
+                used as an environmental intelligence signal.
+                Do not upload personally sensitive information.
+
+            </p>
+
+        </div>
+
+
+        <!-- AI Explanation -->
+
+        <aside class="report-info">
+
+
+            <div class="panel">
+
+                <span class="panel-label">
+                    HOW IT WORKS
+                </span>
+
+                <h2>
+                    Your report becomes intelligence.
+                </h2>
+
+
+                <div class="process-step">
+
+                    <div class="process-number">
+                        01
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Submit evidence
+                        </strong>
+
+                        <p>
+                            Photo, text, location or
+                            observation.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="process-number">
+                        02
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Gemini analyzes it
+                        </strong>
+
+                        <p>
+                            AI identifies smoke, pollution
+                            source and severity.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="process-number">
+                        03
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Data is combined
+                        </strong>
+
+                        <p>
+                            Your report is compared with
+                            sensors, weather and satellite data.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="process-step">
+
+                    <div class="process-number">
+                        04
+                    </div>
+
+                    <div>
+
+                        <strong>
+                            Hotspots are detected
+                        </strong>
+
+                        <p>
+                            The AI model identifies emerging
+                            pollution events.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Trust Card -->
+
+            <div class="trust-card">
+
+                <div class="trust-icon">
+                    🛡️
+                </div>
+
+                <div>
+
+                    <strong>
+                        Responsible reporting
+                    </strong>
+
+                    <p>
+                        Reports are treated as decision-support
+                        signals and should be validated before
+                        official intervention.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </section>
+
+</main>
+
+
+<!-- AI Result Modal -->
+
+<div
+    id="reportModal"
+    class="modal">
+
+    <div class="modal-content">
+
+        <button
+            class="modal-close"
+            onclick="closeReportModal()">
+            ×
+        </button>
+
+        <span class="panel-label">
+            VAYUNET AI ANALYSIS
+        </span>
+
+        <h2>
+            Report analyzed successfully
+        </h2>
+
+        <div class="ai-result">
+
+            <div class="result-row">
+
+                <span>
+                    Smoke detected
+                </span>
+
+                <strong class="green">
+                    YES
+                </strong>
+
+            </div>
+
+            <div class="result-row">
+
+                <span>
+                    Likely source
+                </span>
+
+                <strong>
+                    Industrial emissions
+                </strong>
+
+            </div>
+
+            <div class="result-row">
+
+                <span>
+                    Severity
+                </span>
+
+                <strong class="orange">
+                    HIGH
+                </strong>
+
+            </div>
+
+            <div class="result-row">
+
+                <span>
+                    AI confidence
+                </span>
+
+                <strong class="green">
+                    91%
+                </strong>
+
+            </div>
+
+        </div>
+
+        <p class="modal-description">
+
+            This report has been converted into an environmental
+            intelligence signal. It can be combined with
+            sensor and satellite data to improve hotspot detection.
+
+        </p>
+
+        <button
+            class="action-button"
+            onclick="closeReportModal()">
+
+            Done
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<script src="script.js"></script>
+```
+
+</body>
+
+</html>

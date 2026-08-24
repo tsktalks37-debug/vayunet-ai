@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>VayuNet AI | Dashboard</title>
+
+    <link rel="stylesheet"
+          href="style.css">
+
+</head>
+
+<body>
+
+<nav class="navbar">
+
+    <div class="logo">
+        <span>◉</span> VayuNet <b>AI</b>
+    </div>
+
+    <div class="nav-links">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="dashboard.html">
+            Dashboard
+        </a>
+
+        <a href="report.html">
+            Report Pollution
+        </a>
+
+    </div>
+
+</nav>
+
+
+<main class="dashboard">
+
+    <div class="dashboard-header">
+
+        <div>
+
+            <div class="badge">
+                LIVE ENVIRONMENTAL INTELLIGENCE
+            </div>
+
+            <h1>
+                Pollution Command Center
+            </h1>
+
+            <p>
+                AI-powered monitoring of hyperlocal pollution
+                hotspots across Indian cities.
+            </p>
+
+        </div>
+
+        <div class="status">
+            ● SYSTEM ONLINE
+        </div>
+
+    </div>
+
+
+    <!-- Stats -->
+
+    <section class="dashboard-stats">
+
+        <div class="dashboard-card">
+
+            <span>
+                ACTIVE HOTSPOTS
+            </span>
+
+            <strong>
+                27
+            </strong>
+
+            <small class="green">
+                ↑ 8% today
+            </small>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <span>
+                CRITICAL AREAS
+            </span>
+
+            <strong class="red">
+                08
+            </strong>
+
+            <small>
+                Require attention
+            </small>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <span>
+                CITIZEN REPORTS
+            </span>
+
+            <strong>
+                1,284
+            </strong>
+
+            <small class="green">
+                ↑ 14% this week
+            </small>
+
+        </div>
+
+
+        <div class="dashboard-card">
+
+            <span>
+                PREDICTED SPIKES
+            </span>
+
+            <strong class="orange">
+                13
+            </strong>
+
+            <small>
+                Next 6 hours
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- Main Grid -->
+
+    <section class="dashboard-grid">
+
+
+        <!-- Map -->
+
+        <div class="panel map-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span>
+                        POLLUTION HOTSPOT MAP
+                    </span>
+
+                    <h2>
+                        India — Live View
+                    </h2>
+
+                </div>
+
+                <button>
+                    Refresh
+                </button>
+
+            </div>
+
+
+            <div class="big-map">
+
+                <div class="map-grid"></div>
+
+                <div class="india-shape">
+
+                    <div class="map-hotspot hotspot-a"></div>
+
+                    <div class="map-hotspot hotspot-b"></div>
+
+                    <div class="map-hotspot hotspot-c"></div>
+
+                    <div class="map-hotspot hotspot-d"></div>
+
+                </div>
+
+
+                <div class="map-location location-a">
+                    Delhi NCR
+                </div>
+
+                <div class="map-location location-b">
+                    Meerut
+                </div>
+
+                <div class="map-location location-c">
+                    Mumbai
+                </div>
+
+
+                <div class="map-legend">
+
+                    <div>
+                        <i class="critical"></i>
+                        Critical
+                    </div>
+
+                    <div>
+                        <i class="high"></i>
+                        High
+                    </div>
+
+                    <div>
+                        <i class="moderate"></i>
+                        Moderate
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Hotspot -->
+
+        <div class="panel hotspot-panel">
+
+            <div class="panel-header">
+
+                <div>
+
+                    <span>
+                        TOP ALERT
+                    </span>
+
+                    <h2>
+                        Meerut Corridor
+                    </h2>
+
+                </div>
+
+                <span class="critical-label">
+                    CRITICAL
+                </span>
+
+            </div>
+
+
+            <div class="risk-score">
+
+                <div class="score">
+                    92%
+                </div>
+
+                <div>
+                    <span>
+                        HOTSPOT PROBABILITY
+                    </span>
+
+                    <p>
+                        Very high probability of
+                        abnormal pollution activity.
+                    </p>
+                </div>
+
+            </div>
+
+
+            <div class="metrics">
+
+                <div>
+                    <span>PM2.5</span>
+                    <strong>218</strong>
+                </div>
+
+                <div>
+                    <span>PM10</span>
+                    <strong>301</strong>
+                </div>
+
+                <div>
+                    <span>Wind</span>
+                    <strong>3.2 m/s</strong>
+                </div>
+
+                <div>
+                    <span>Humidity</span>
+                    <strong>68%</strong>
+                </div>
+
+            </div>
+
+
+            <div class="source-box">
+
+                <span>
+                    AI SOURCE ANALYSIS
+                </span>
+
+                <strong>
+                    Industrial emissions
+                </strong>
+
+                <small>
+                    Gemini confidence: 89%
+                </small>
+
+            </div>
+
+
+            <button class="action-button">
+                View AI Recommendation →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Forecast -->
+
+    <section class="panel forecast-panel">
+
+        <div class="panel-header">
+
+            <div>
+
+                <span>
+                    AI FORECAST
+                </span>
+
+                <h2>
+                    PM2.5 — Next 6 Hours
+                </h2>
+
+            </div>
+
+            <div class="forecast-warning">
+                ⚠ Spike predicted
+            </div>
+
+        </div>
+
+
+        <div class="forecast-chart">
+
+            <div class="chart-line"></div>
+
+            <div class="chart-point p1">164</div>
+            <div class="chart-point p2">177</div>
+            <div class="chart-point p3">189</div>
+            <div class="chart-point p4">205</div>
+            <div class="chart-point p5">223</div>
+            <div class="chart-point p6">258</div>
+
+        </div>
+
+
+        <div class="forecast-hours">
+
+            <span>NOW</span>
+            <span>+1H</span>
+            <span>+2H</span>
+            <span>+3H</span>
+            <span>+4H</span>
+            <span>+6H</span>
+
+        </div>
+
+    </section>
+
+
+</main>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
